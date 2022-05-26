@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
+const { User, Thought, Game } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -9,7 +9,8 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('thoughts')
-          .populate('friends');
+          .populate('friends')
+          .populate('games');
 
         return userData;
       }
@@ -20,13 +21,15 @@ const resolvers = {
       return User.find()
         .select('-__v -password')
         .populate('thoughts')
-        .populate('friends');
+        .populate('friends')
+        .populate('games');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
         .populate('friends')
-        .populate('thoughts');
+        .populate('thoughts')
+        .populate('games');
     },
     thoughts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -34,6 +37,13 @@ const resolvers = {
     },
     thought: async (parent, { _id }) => {
       return Thought.findOne({ _id });
+    },
+    games: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Game.find(params).sort({ createdAt: -1 });
+    },
+    game: async (parent, { _id }) => {
+      return Game.findOne({ _id });
     }
   },
 
@@ -59,6 +69,21 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    },
+    addGame: async (parent, args, context) => {
+      if (context.user) {
+        const game = await Game.create({ ...args, username: context.user.username });
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { games: game._id } },
+          { new: true }
+        );
+
+        return game;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
     },
     addThought: async (parent, args, context) => {
       if (context.user) {
