@@ -15,13 +15,13 @@ const typeDefs = gql`
     thoughtText: String
     createdAt: String
     username: String
-    reactionCount: Int
-    reactions: [Reaction]
+    commentCount: Int
+    comments: [comment]
   }
 
-  type Reaction {
+  type comment {
     _id: ID
-    reactionBody: String
+    commentBody: String
     createdAt: String
     username: String
   }
@@ -43,7 +43,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addThought(thoughtText: String!): Thought
-    addReaction(thoughtId: ID!, reactionBody: String!): Thought
+    addComment(thoughtId: ID!, commentBody: String!): Thought
     addFriend(friendId: ID!): User
   }
 `;
