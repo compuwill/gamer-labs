@@ -29,13 +29,13 @@ const savedGames = () => {
     }
 
     try {
-      await deleteBook({
+      await deleteGame({
         variables: {gamesId: gamesId},
         update: cache => {
           const data = cache.readQuery({ query: GET_ME });
           const userDataCache = data.me;
           const savedGamesCache = userDataCache.savedGames;
-          const updatedGamesCache = savedGamesCache.filter((book) => games.gamesId !== gamesId);
+          const updatedGamesCache = savedGamesCache.filter((games) => games.gamesId !== gamesId);
           data.me.savedGames = updatedGamesCache;
           cache.writeQuery({ query: GET_ME , data: {data: {...data.me.savedGames}}})
         }
@@ -55,7 +55,7 @@ const savedGames = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Viewing saved books!</h1>
+          <h1>Viewing favorite games!</h1>
         </Container>
       </Jumbotron>
       <Container>

@@ -37,15 +37,15 @@ const searchGames = () => {
 
       const { items } = await response.json();
 
-      const gamesData = items.map((book) => ({
+      const gamesData = items.map((games) => ({
         gamesId: games.id,
-        authors: book.volumeInfo.authors || ['No author to display'],
-        title: games.volumeInfo.title,
-        description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || '',
+        publishers: games.publishers || ['No publisher to display'],
+        title: games.gamesInfo.title,
+        description: games.gamesInfo.description,
+        image: games.gamesInfo.imageLinks?.thumbnail || '',
       }));
 
-      setSearchedBooks(bookData);
+      setSearchedGames(gamesData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
@@ -53,9 +53,9 @@ const searchGames = () => {
   };
 
   // create function to handle saving a book to our database
-  const handleSaveBook = async (bookId) => {
+  const handleSavedGames = async (gamesId) => {
     // find the book in `searchedBooks` state by the matching id
-    const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+    const gamesToSave = searchedGames.find((games) => games.gamesId === gamesId);
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -65,14 +65,14 @@ const searchGames = () => {
     }
 
     try {
-      const response = await saveBook(bookToSave, token);
+      const response = await savedGames(gamesToSave, token);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
 
       // if book successfully saves to user's account, save book id to state
-      setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+      setSavedGamesIds([...savedGamesIds, gamesToSave.gamesId]);
     } catch (err) {
       console.error(err);
     }
@@ -107,14 +107,14 @@ const searchGames = () => {
 
       <Container>
         <h2>
-          {searchedBooks.length
-            ? `Viewing ${searchedBooks.length} results:`
+          {searchedGames.length
+            ? `Viewing ${searchedGames.length} results:`
             : 'Search for a book to begin'}
         </h2>
         <CardColumns>
-          {searchedBooks.map((book) => {
+          {searchedGames.map((book) => {
             return (
-              <Card key={book.bookId} border='dark'>
+              <Card key={games.bookId} border='dark'>
                 {book.image ? (
                   <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
