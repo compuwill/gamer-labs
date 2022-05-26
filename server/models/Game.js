@@ -7,7 +7,11 @@ const gameSchema = new Schema(
         required: true,
         minlength: 1,
         maxlength: 280
-      }
+      },
+      username: {
+        type: String,
+        required: true
+      },
     }
 );
 
