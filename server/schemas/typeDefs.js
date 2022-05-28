@@ -5,6 +5,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    steamUser: String
     friendCount: Int
     thoughts: [Thought]
     games: [Game]
@@ -50,6 +51,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    updateUserSteam(steamUser: String!): User
     addGame(gameTitle: String!): Game
     addThought(thoughtText: String!): Thought
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
