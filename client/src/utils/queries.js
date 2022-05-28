@@ -51,6 +51,9 @@ export const QUERY_USER = gql`
       username
       email
       friendCount
+      games {
+        gameTitle
+      }
       friends {
         _id
         username
@@ -72,6 +75,9 @@ export const QUERY_ME = gql`
       username
       email
       friendCount
+      games {
+        gameTitle
+      }
       thoughts {
         _id
         thoughtText

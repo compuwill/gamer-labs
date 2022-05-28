@@ -4,6 +4,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
+import GamesList from '../components/GamesList';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -51,9 +52,9 @@ const Profile = (props) => {
   return (
     <div>
       <div className="flex-row mb-3">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-        </h2>
+        <h5 className="p-3 display-inline-block pixel text-outline">
+          Viewing {userParam ? `${user.username}'s` : 'your'} lab
+        </h5>
 
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>
@@ -66,7 +67,7 @@ const Profile = (props) => {
         <div className="col-12 mb-3 col-lg-8">
           <ThoughtList
             thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
+            title={`${user.username}'s posts...`}
           />
         </div>
 
@@ -75,6 +76,9 @@ const Profile = (props) => {
             username={user.username}
             friendCount={user.friendCount}
             friends={user.friends}
+          />
+          <GamesList
+          games={user.games}
           />
         </div>
       </div>
