@@ -20,6 +20,10 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    steamUser: {
+      type: String,
+      unique: true,
+    },
     games: [
       {
         type: Schema.Types.ObjectId,
