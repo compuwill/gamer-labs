@@ -54,6 +54,12 @@ const resolvers = {
 
       return { token, user };
     },
+    updateUserSteam: async (parent, args, context) => {
+      console.log(context.user);
+      const user = await User.findOneAndUpdate({ _id: context.user._id }, {steamUser: args.steamUser})
+      const token = signToken(user);
+      return user;
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
