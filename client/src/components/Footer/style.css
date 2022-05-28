@@ -2,3 +2,9 @@
 .footer {
     border-top: 3px solid rgb(0, 0, 0);
   }
+
+  .footerlogo {
+    margin-bottom: -.1em;
+    margin-right: .1em;
+
+  }
