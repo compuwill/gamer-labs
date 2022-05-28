@@ -24,6 +24,14 @@ export const ADD_USER = gql`
   }
 `;
 
+export const UPDATE_USER_STEAM = gql`
+mutation UpdateUserSteam($steamUser: String!) {
+  updateUserSteam(steamUser: $steamUser) {
+    steamUser
+  }
+}
+`
+
 export const ADD_GAME = gql`
   mutation AddGame($gameTitle: String!) {
     addGame(gameTitle: $gameTitle) {
