@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 import Auth from '../../utils/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFlask } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
   const logout = event => {
@@ -13,7 +15,7 @@ const Header = () => {
     <header className="bg-secondary mb-4 py-2 flex-row align-center header">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <Link to="/">
-          <h1>GamerLabs</h1>
+          <h1 className='pixel text-outline'><FontAwesomeIcon icon={faFlask} className='logo text-outline'/>GamerLabs</h1>
         </Link>
 
         <nav className="text-center">

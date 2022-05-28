@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
   --primary: #616565;
   --secondary: #500d88	;
@@ -21,6 +23,14 @@
 html,
 body {
   min-height: 100%;
+}
+
+.pixel {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.text-outline {
+  text-shadow: 4px 0 0 #000, 0 -4px 0 #000, 0 4px 0 #000, -4px 0 0 #000;
 }
 
 body {
