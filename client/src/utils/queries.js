@@ -3,6 +3,7 @@ import { gql } from '@apollo/client';
 export const QUERY_GAMES = gql`
   query Games {
     games {
+      _id
       gameTitle
     }
   }
@@ -76,6 +77,7 @@ export const QUERY_ME = gql`
       email
       friendCount
       games {
+        _id
         gameTitle
       }
       thoughts {

@@ -91,6 +91,18 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+    removeGame: async (parent, args, context) => {
+      if (context.user) {
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $pull: { games: game._id } },
+          { new: true }
+        );
+
+        return game;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     addThought: async (parent, args, context) => {
       if (context.user) {
         const thought = await Thought.create({ ...args, username: context.user.username });
