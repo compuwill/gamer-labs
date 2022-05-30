@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import Auth from '../../utils/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlask } from '@fortawesome/free-solid-svg-icons'
+import { faFlask, faHouseUser, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
   const logout = event => {
@@ -21,9 +21,9 @@ const Header = () => {
         <nav className="text-center labnav pixel">
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">My Lab</Link>
+              <Link to="/profile"><FontAwesomeIcon icon={faHouseUser} className='mb-1 mr-3 fa-l'/>My Lab</Link>
               <a href="/" onClick={logout}>
-                Logout
+              <FontAwesomeIcon icon={faArrowRightFromBracket} className='mb-1 mr-3 fa-l'/>Logout
               </a>
             </>
           ) : (

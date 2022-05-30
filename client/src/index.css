@@ -44,6 +44,10 @@ body {
   background-color: #292929;
 }
 
+textarea {
+  font-family: 'Rajdhani', sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -806,9 +810,9 @@ nav a:hover {
 }
 
 
-.link {
+/* .link {
   color: var(--quatrinary);
-}
+} */
 /* .card-header a:visited {
   color: var(--quatrinary);
 } */
