@@ -80,6 +80,7 @@ const Profile = (props) => {
             friends={user.friends}
           />
           <GamesList
+          username={user.username}
           games={user.games}
           title={`${user.username}'s games...`}
           />
