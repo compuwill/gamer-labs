@@ -8,7 +8,7 @@ const FriendList = ({ friendCount, username, friends }) => {
 
   return (
     <div className='mb-5'>
-      <h5>
+      <h5 className='mb-3 thelist'>
         Lab rats {username}'s watching!
       </h5>
       {friends.map(friend => (
