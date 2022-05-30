@@ -805,6 +805,18 @@ nav a:hover {
   color: var(--error);
 }
 
+
+.link {
+  color: var(--quatrinary);
+}
+/* .card-header a:visited {
+  color: var(--quatrinary);
+} */
+.link:hover {
+  color: var(--quatrinary);
+  text-decoration: underline;
+}
+
 /* BACKGROUND UTILS */
 .bg-primary {
   background-color: var(--primary);

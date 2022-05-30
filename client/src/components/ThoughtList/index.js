@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMessage, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const ThoughtList = ({ thoughts, title }) => {
   if (!thoughts.length) {
@@ -17,9 +19,9 @@ const ThoughtList = ({ thoughts, title }) => {
               <Link
                 to={`/profile/${thought.username}`}
                 style={{ fontWeight: 700 }}
-                className="text-light"
+                className="text-light link"
               >
-                {thought.username}
+                <FontAwesomeIcon icon={faUser} className='mr-2'/>{thought.username}
               </Link>{' '}
               created post on {thought.createdAt}
             </p>
@@ -27,7 +29,7 @@ const ThoughtList = ({ thoughts, title }) => {
               <Link to={`/thought/${thought._id}`}>
                 <p className='postText'>{thought.thoughtText}</p>
                 <div className="mb-0 commentSection">
-                  <div>Click to View Comments</div>
+                  <div><FontAwesomeIcon icon={faMessage}/> Click to View Comments</div>
                   <div>Total Comments: {thought.reactionCount}</div>
                 </div>
               </Link>

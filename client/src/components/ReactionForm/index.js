@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import './index.css'
 import { useMutation } from '@apollo/client';
 import { ADD_REACTION } from '../../utils/mutations';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMessage } from '@fortawesome/free-solid-svg-icons'
 
 const ReactionForm = ({ thoughtId }) => {
   const [reactionBody, setBody] = useState('');
@@ -45,8 +47,8 @@ const ReactionForm = ({ thoughtId }) => {
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
-        <button className="btn col-12 col-md-3 comment" type="submit">
-          Comment
+        <button className="btn col-12 col-md-3" type="submit">
+        <FontAwesomeIcon icon={faMessage}/> Comment
         </button>
       </form>
 
