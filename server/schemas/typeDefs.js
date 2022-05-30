@@ -24,6 +24,7 @@ const typeDefs = gql`
   type Game {
     _id: ID
     gameTitle: String
+    username: String
   }
 
   type Reaction {

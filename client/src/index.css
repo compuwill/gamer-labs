@@ -813,6 +813,12 @@ nav a:hover {
   background-color: var(--dark);
 }
 
+.game-item {
+  flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* FLEX CONTENT */
 .flex-row {
   display: flex;

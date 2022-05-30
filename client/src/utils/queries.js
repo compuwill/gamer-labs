@@ -5,6 +5,7 @@ export const QUERY_GAMES = gql`
     games {
       _id
       gameTitle
+      username
     }
   }
 `;
@@ -54,6 +55,7 @@ export const QUERY_USER = gql`
       friendCount
       games {
         gameTitle
+        username
       }
       friends {
         _id
@@ -79,6 +81,7 @@ export const QUERY_ME = gql`
       games {
         _id
         gameTitle
+        username
       }
       thoughts {
         _id
