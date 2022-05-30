@@ -69,10 +69,10 @@ const GamesListForm = () => {
         <input
           placeholder="Game Title"
           value={gameTitle}
-          className="form-input col-12 col-md-9"
+          className="form-input mt-5"
           onChange={handleChange}
         ></input>
-        <button className="btn col-12 col-md-3" type="submit">
+        <button className="btn w-100 mb-3" type="submit">
           Add Game
         </button>
       </form>

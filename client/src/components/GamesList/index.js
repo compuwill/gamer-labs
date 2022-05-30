@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';import Auth from '../../utils/auth';
-
+import './index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
@@ -58,7 +58,7 @@ const GamesList = ({ games }) => {
   }
 
   return (
-    <div className='GamesContainer bg-secondary p-3'>
+    <div className='GamesContainer bg-secondary p-3 gList'>
       <h5>
         Playing {games.length} {games.length === 1 ? 'game' : 'games'}
       </h5>
