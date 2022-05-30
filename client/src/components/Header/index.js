@@ -18,7 +18,7 @@ const Header = () => {
           <h1 className='pixel text-outline'><FontAwesomeIcon icon={faFlask} className='logo text-outline fa-xl'/>GamerLabs</h1>
         </Link>
 
-        <nav className="text-center labnav">
+        <nav className="text-center labnav pixel">
           {Auth.loggedIn() ? (
             <>
               <Link to="/profile">My Lab</Link>

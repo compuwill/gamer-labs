@@ -26,8 +26,8 @@ const ThoughtList = ({ thoughts, title }) => {
               <Link to={`/thought/${thought._id}`}>
                 <p>{thought.thoughtText}</p>
                 <p className="mb-0">
-                  Reactions: {thought.reactionCount} || Click to{' '}
-                  {thought.reactionCount ? 'see' : 'start'} the discussion!
+                  <div>Click to View Comments</div>
+                  <div>Total Comments: {thought.reactionCount}</div>
                 </p>
               </Link>
             </div>
