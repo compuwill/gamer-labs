@@ -21,7 +21,8 @@ const userSchema = new Schema(
       minlength: 5
     },
     steamUser: {
-      type: String
+      type: String,
+      unique: false,
     },
     games: [
       {
