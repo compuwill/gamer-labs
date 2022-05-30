@@ -30,7 +30,7 @@ const GamesListForm = () => {
       //   query: QUERY_GAMES,
       //   data: { games: [addGame, ...games] },
       // });
-      console.log('after');
+      // console.log('after');
     }
   });
 
@@ -62,24 +62,18 @@ const GamesListForm = () => {
 
   return (
     <div>
-      <p
-        className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
-      >
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
       <form
         className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
       >
-        <textarea
-          placeholder="Add Games List"
+        <input
+          placeholder="Game Title"
           value={gameTitle}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
-        ></textarea>
+        ></input>
         <button className="btn col-12 col-md-3" type="submit">
-          Submit
+          Add Game
         </button>
       </form>
     </div>
