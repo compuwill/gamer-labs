@@ -54,7 +54,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     updateUserSteam(steamUser: String!): User
     addGame(gameTitle: String!): Game
-    removeGame(_id: ID!): Game
+    removeGame(gameid: ID!): Game
     addThought(thoughtText: String!): Thought
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
     addFriend(friendId: ID!): User

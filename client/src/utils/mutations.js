@@ -35,16 +35,19 @@ mutation UpdateUserSteam($steamUser: String!) {
 export const ADD_GAME = gql`
   mutation AddGame($gameTitle: String!) {
     addGame(gameTitle: $gameTitle) {
+      _id
       gameTitle
+      username
     }
   }
 `;
 
 export const REMOVE_GAME = gql`
-mutation RemoveGame($id: ID!) {
-  removeGame(_id: $id) {
+mutation RemoveGame($gameid: ID!) {
+  removeGame(gameid: $gameid) {
     _id
     gameTitle
+    username
   }
 }
 `;
