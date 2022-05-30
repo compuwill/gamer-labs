@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './index.css'
 
 const ThoughtList = ({ thoughts, title }) => {
   if (!thoughts.length) {
@@ -24,11 +25,11 @@ const ThoughtList = ({ thoughts, title }) => {
             </p>
             <div className="card-body">
               <Link to={`/thought/${thought._id}`}>
-                <p>{thought.thoughtText}</p>
-                <p className="mb-0">
+                <p className='postText'>{thought.thoughtText}</p>
+                <div className="mb-0 commentSection">
                   <div>Click to View Comments</div>
                   <div>Total Comments: {thought.reactionCount}</div>
-                </p>
+                </div>
               </Link>
             </div>
           </div>
