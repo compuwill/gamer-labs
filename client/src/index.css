@@ -126,6 +126,7 @@ nav a:hover {
   padding: 0.5rem 1.2rem;
   margin: 5px 0;
   border-radius: var(--border-radius);
+  color:black;
   border: none;
   outline: blueviolet;
   background-color: var(--secondary);
