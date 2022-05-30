@@ -93,13 +93,15 @@ const resolvers = {
     },
     removeGame: async (parent, args, context) => {
       if (context.user) {
+        console.log(context.user);
+        console.log(args);
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $pull: { games: game._id } },
+          { $pull: { games: args._id } },
           { new: true }
         );
 
-        return game;
+        return "deleted";
       }
       throw new AuthenticationError('You need to be logged in!');
     },
