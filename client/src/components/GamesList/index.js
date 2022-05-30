@@ -66,7 +66,7 @@ const GamesList = ({ games }) => {
       </h5>
       {games.map(game => (
         <div className="game-item w-100 d-flex flex-row" key={game._id}>
-          <div>▪ {game.gameTitle}</div> {Auth.getProfile().data.username === game.username ? (<button onClick={(e) => handleDelete(game._id, e)} data-gameid={game._id}><FontAwesomeIcon icon={faTrashCan}/></button>) : ''} 
+          <div>▪ {game.gameTitle}</div> {Auth.getProfile().data.username === game.username ? (<button className='btn-mini' onClick={(e) => handleDelete(game._id, e)} data-gameid={game._id}><FontAwesomeIcon icon={faTrashCan}/></button>) : ''} 
         </div>
       ))}
     </div>
