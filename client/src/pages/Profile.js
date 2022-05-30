@@ -60,7 +60,7 @@ const Profile = (props) => {
 
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>
-            Add Friend
+            Watch Fellow Rat
           </button>
         )}
       </div>
@@ -81,12 +81,13 @@ const Profile = (props) => {
             friendCount={user.friendCount}
             friends={user.friends}
           />
+           {Auth.getProfile().data.username === user.username ? (<GamesListForm/>) : ''}
           <GamesList
           username={user.username}
           games={user.games}
           title={`${user.username}'s games...`}
           />
-          <GamesListForm/>
+         
         </div>
       </div>
 

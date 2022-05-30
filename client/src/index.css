@@ -127,7 +127,7 @@ nav a:hover {
   margin: 5px 0;
   border-radius: var(--border-radius);
   color:black;
-  border: none;
+  border: solid black;
   outline: blueviolet;
   background-color: var(--secondary);
   transition: all 0.5s;
