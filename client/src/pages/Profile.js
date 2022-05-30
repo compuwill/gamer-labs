@@ -5,6 +5,7 @@ import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
 import GamesList from '../components/GamesList';
+import GamesListForm from '../components/GamesListForm'
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -81,6 +82,7 @@ const Profile = (props) => {
           gameslist={user.gameslist}
           title={`${user.username}'s gameslist...`}
           />
+          <GamesListForm/>
         </div>
       </div>
       <div className="mb-3">{!userParam && <ThoughtForm />}</div>

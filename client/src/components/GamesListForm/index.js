@@ -1,36 +1,39 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
-import { ADD_FAVORITE_GAME } from '../../utils/mutations';
+import { ADD_GAME } from '../../utils/mutations';
 import { QUERY_GAMES, QUERY_ME } from '../../utils/queries';
 
 const GamesListForm = () => {
-  const [gamesText, setText] = useState('');
+  const [gameTitle, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addGames, { error }] = useMutation(ADD_FAVORITE_GAME, {
-    update(cache, { data: { addGames } }) {
+  const [addGame, { error }] = useMutation(ADD_GAME, {
+    update(cache, { data: { addGame } }) {
       
         // could potentially not exist yet, so wrap in a try/catch
       try {
         // update me array's cache
-        const { me } = cache.readQuery({ query: QUERY_GAMES });
+        const { me } = cache.readQuery({ query: QUERY_ME });
         cache.writeQuery({
-          query: QUERY_GAMES,
-          data: { me: { ...me, games: [...me.games, addGames] } },
+          query: QUERY_ME,
+          data: { me: { ...me, games: [...me.games, addGame] } },
         });
       } catch (e) {
         console.warn("First Game insertion by user!")
       }
 
       // update games array's cache
-      const { games } = cache.readQuery({ query: QUERY_GAMES });
-      cache.writeQuery({
-        query: QUERY_GAMES,
-        data: { games: [addGames, ...thoughts] },
-      });
+      // console.log('before');
+      // const { games } = cache.readQuery({ query: QUERY_GAMES });
+      // cache.writeQuery({
+      //   query: QUERY_GAMES,
+      //   data: { games: [addGame, ...games] },
+      // });
+      console.log('after');
     }
   });
+
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -45,8 +48,8 @@ const GamesListForm = () => {
     event.preventDefault();
 
     try {
-      await addGames({
-        variables: { gamesText },
+      await addGame({
+        variables: { gameTitle },
       });
 
       // clear form value
@@ -71,7 +74,7 @@ const GamesListForm = () => {
       >
         <textarea
           placeholder="Add Games List"
-          value={gamesText}
+          value={gameTitle}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
