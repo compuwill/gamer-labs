@@ -65,8 +65,8 @@ else
             {steamInfo.personastate === 4 && (<div className='flex-row align-center'><div className='status-indicator Snooze mr-2'></div><div>Snooze</div></div>)}
 
         </div>
-        <div className='detail'>Real Name: {steamInfo.realname}</div>
-        <div className='detail'>Location: {steamInfo.loccountrycode}, {steamInfo.locstatecode}        </div>
+        {steamInfo.realname && (<div className='detail'>Real Name: {steamInfo.realname}</div>)}
+        {steamInfo.locstatecode && (<div className='detail'>Location: {steamInfo.loccountrycode}, {steamInfo.locstatecode}</div>)}
       </div>
     </div>
   );
