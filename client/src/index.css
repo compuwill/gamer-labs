@@ -116,6 +116,31 @@ nav a:hover {
   border: solid black;
 }
 
+
+.detail {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 100rem;
+}
+
+.Offline {
+  background-color: rgb(54, 54, 54);
+}
+.Online {
+  background-color: green;
+}
+.Busy {
+  background-color: rgb(189, 0, 0);
+}
+.Away, .Snooze {
+  background-color: rgb(189, 123, 0);
+}
+
 .page-title {
   text-align: center;
   width: 100%;
@@ -849,6 +874,10 @@ nav a:hover {
 }
 
 /* FLEX CONTENT */
+.d-flex{
+  display:flex;
+}
+
 .flex-row {
   display: flex;
   flex-wrap: wrap;

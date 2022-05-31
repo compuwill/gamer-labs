@@ -55,26 +55,20 @@ const Profile = (props) => {
 
   return (
     <div>
-      <div className="flex-row mb-3">
-        <h5 className="p-3 display-inline-block pixel text-outline">
+      <div className="flex-row mb-3 justify-center">
+        <h5 className="p-1 display-inline-block pixel text-outline">
           Viewing {userParam ? `${user.username}'s` : 'your'} lab
         </h5>
-
-
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>
             Watch Fellow Rat
           </button>
         )}
-        {!userParam && (
-          <SteamIDForm
-          gotSteamID = {user.steamUser}          
-          />
-        )}
       </div>
 
-      <div className="flex-row justify-space-between mb-3">
+      <div className="flex-row justify-space-between mb-3">      
         <div className="col-12 mb-3 col-lg-8">
+        
         <div className="mb-3">{!userParam && <ThoughtForm />}</div>
           <ThoughtList
             thoughts={user.thoughts}
@@ -84,6 +78,12 @@ const Profile = (props) => {
         </div>
 
         <div className="col-12 col-lg-3 mb-3">
+        {!userParam && (
+          <SteamIDForm
+          gotSteamID = {user.steamUser}          
+          />
+        )}
+          <SteamInfo steamID = {user.steamUser}/>
           <FriendList
             username={user.username}
             friendCount={user.friendCount}
