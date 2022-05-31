@@ -6,6 +6,8 @@ import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
 import GamesList from '../components/GamesList';
 import GamesListForm from '../components/GamesListForm'
+import SteamIDForm from '../components/SteamIDForm'
+import SteamInfo from '../components/SteamInfo'
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -57,11 +59,21 @@ const Profile = (props) => {
         <h5 className="p-3 display-inline-block pixel text-outline">
           Viewing {userParam ? `${user.username}'s` : 'your'} lab
         </h5>
+        {!userParam && (
+          <SteamInfo
+          steamID = {user.steamUser}          
+          />
+        )}
 
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>
             Watch Fellow Rat
           </button>
+        )}
+        {!userParam && (
+          <SteamIDForm
+          gotSteamID = {user.steamUser}          
+          />
         )}
       </div>
 

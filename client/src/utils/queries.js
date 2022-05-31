@@ -53,6 +53,7 @@ export const QUERY_USER = gql`
       username
       email
       friendCount
+      steamUser
       games {
         gameTitle
         username
@@ -78,6 +79,7 @@ export const QUERY_ME = gql`
       username
       email
       friendCount
+      steamUser
       games {
         _id
         gameTitle
