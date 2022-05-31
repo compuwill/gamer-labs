@@ -59,11 +59,7 @@ const Profile = (props) => {
         <h5 className="p-3 display-inline-block pixel text-outline">
           Viewing {userParam ? `${user.username}'s` : 'your'} lab
         </h5>
-        {!userParam && (
-          <SteamInfo
-          steamID = {user.steamUser}          
-          />
-        )}
+
 
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>
