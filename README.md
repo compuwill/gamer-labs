@@ -1,10 +1,39 @@
 # GamerLabs
 
-This is social media like app designed for the user to connect with friends and discuss opinions/react to thier favorite games. 
-This app uses the Steam API to grab information for player data such as the kind of games played, time spent and other user data to showcase to other users.
-With this app users can showcase their personality through the various games played and their reactions to other users post. 
-At the same time through the friends list users will be able to find other players and build a community to keep discussions going and discover new information for as long as the account is active.
-This application is deployed using Heroku. Please use the link below to access the deployed site.
-Thank You
-
+## Live Link
 https://gamerlabs.herokuapp.com/
+
+## Description
+
+This is a full stack MERN social media application designed for the user to connect with other users interested in the same games as them. This app alsouses the Steam API to grab a users formaion  intto showcase their steam profile as well.
+
+## Screenshots
+![homePage](https://user-images.githubusercontent.com/95259338/171450569-d73cce34-af4b-430d-b59b-8bf509973df3.PNG)
+![userProfile](https://user-images.githubusercontent.com/95259338/171450581-4e9a5b4e-0b41-4704-82f5-df301a92990b.PNG)
+![otherProfile](https://user-images.githubusercontent.com/95259338/171450591-efe9749b-0f88-4ee1-8fb0-e2282e4d8728.PNG)
+
+## Usage
+
+In order to use this application just go to the link provided in this readme and sign up to start watching fellow labrats.
+
+## Credits
+
+compuwill
+
+Damon-Hansen
+
+gpmike31
+
+BKrayton815
+
+## How to Contribute
+
+The way to contribute to this project is to send a detailed message of improvements or suggestions you would like to see to the email at the bottom of this readme.
+
+
+## Questions
+
+If you have any questions here is my contact info to reach out to me.
+
+https://github.com/Damon-Hansen
+damon.hansen0113@gmail.com
