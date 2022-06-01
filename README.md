@@ -5,7 +5,7 @@ https://gamerlabs.herokuapp.com/
 
 ## Description
 
-This is a full stack MERN social media application designed for the user to connect with other users interested in the same games as them. This app alsouses the Steam API to grab a users formaion  intto showcase their steam profile as well.
+This is a full stack MERN social media application designed for the user to connect with other users interested in the same games as them. This app also uses the Steam API to grab a users information to showcase their steam profile as well.
 
 ## Screenshots
 ![homePage](https://user-images.githubusercontent.com/95259338/171450569-d73cce34-af4b-430d-b59b-8bf509973df3.PNG)
