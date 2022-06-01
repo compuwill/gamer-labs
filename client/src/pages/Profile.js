@@ -24,6 +24,7 @@ const Profile = (props) => {
 
   const user = data?.me || data?.user || {};
 
+   const [isClicked, setIsClicked] = useState(false);
   // navigate to personal profile page if username is yours
   console.log(userParam);
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -48,6 +49,7 @@ const Profile = (props) => {
       await addFriend({
         variables: { id: user._id },
       });
+      setIsClicked(true);
     } catch (e) {
       console.error(e);
     }
@@ -61,7 +63,7 @@ const Profile = (props) => {
         </h5>
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>
-            Watch Fellow Rat
+            ${isClicked ? `Watch Fellow Rat` : `Watching Fellow Rat`}
           </button>
         )}
       </div>
