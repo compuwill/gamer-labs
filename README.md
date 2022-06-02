@@ -26,15 +26,3 @@ https://github.com/gpmike31
 
 https://github.com/BKrayton815
 
-## How to Contribute
-
-The way to contribute to this project is to send a detailed message of improvements or suggestions you would like to see to the email at the bottom of this readme.
-
-
-## Questions
-
-If you have any questions here is my contact info to reach out to me.
-
-https://github.com/Damon-Hansen
-
-damon.hansen0113@gmail.com
